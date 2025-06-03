@@ -22,7 +22,7 @@ function buscar(){
       };
       var c=document.createElement("div");
       c.className="card m-2";
-      c.style.width="30rem";
+      c.style.width="30px";
       c.innerHTML=`
         <img src="${r.imagen}" class="card-img-top">
         <div class="card-body">
