@@ -85,7 +85,7 @@ function buscar() {
                           Clase: ${especie.class || "No se"}<br>
                           Orden: ${especie.order || "No se"}<br>
                           Genero: ${especie.genus || "No se"}<br>
-                          Familia: ${especie.family || "No se"}<br>
+                          Familia: ${especie.family || "No se"}
                         </p>
                       </div>
                     `;
