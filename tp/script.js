@@ -17,25 +17,23 @@ function buscar(){
         reino:"bob",
         filo:"epic",
         clase:"4 15",
-        orden:"ferg",
-        epic:"100%"
+        orden:"ferg"
       };
       var c=document.createElement("div");
       c.className="card m-2";
-      c.style.width="30px";
-      c.innerHTML=`
-        <img src="${r.imagen}" class="card-img-top">
+      c.style.width="480px";
+      c.innerHTML=
+        `<img src="${r.imagen}" class="card-img-top">
         <div class="card-body">
           <h5 class="card-title">${r.nombre}</h5>
           <p class="card-text">
-            Reino:${r.Reino}<br>
-            Filo:${r.Filo}<br>
-            Clase:${r.Clase}<br>
-            Orden:${r.Orden}<br>
-            Descripción:${r.Descripcion}
+            Reino:${r.reino}<br>
+            Filo:${r.filo}<br>
+            Clase:${r.clase}<br>
+            Orden:${r.orden}<br>
+            Descripción:${r.descripcion}
           </p>
-        </div>
-      `;
+        </div>`;
       resultados.appendChild(c);
     }, 800);
   } 
@@ -73,9 +71,9 @@ function buscar(){
                   .then(()=>{
                     var c=document.createElement("div");
                     c.className="card m-2";
-                    c.style.width="30rem";
-                    c.innerHTML= `
-                      <img src="${imageURL}" class="card-img-top">
+                    c.style.width="480px";
+                    c.innerHTML= 
+                    `<img src="${imageURL}" class="card-img-top">
                       <div class="card-body">
                         <h5 class="card-title">${especie.scientificName || "No se"}</h5>
                         <p class="card-text">
@@ -86,21 +84,23 @@ function buscar(){
                           Genero:${especie.genus|| "No se"}<br>
                           Familia:${especie.family||"No se"}
                         </p>
-                      </div>
-                    `;
+                      </div>`;
                     resultados.appendChild(c);
                   })
                   .catch(()=> {
-                    resultados.innerHTML="<p>Error</p>";
+                    resultados.innerHTML="<h1>Error</h1>";
+                    mapa.style.display="none";
                   });
               }
             })
             .catch(()=> {
-              resultados.innerHTML="<p>Error</p>";
+              resultados.innerHTML="<h1>Error</h1>";
+              mapa.style.display="none";
             });
         })
         .catch(()=> {
-          resultados.innerHTML="<p>Error</p>";
+          resultados.innerHTML="<h1>Error</h1>";
+          mapa.style.display="none";
         });
     }, 800);
   }
